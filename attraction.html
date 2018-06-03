@@ -28,43 +28,8 @@
       #map{height: 450px}
     }
   </style>
-
-  <script>
-    var map;
-    var marker1; var marker2; var marker3;
-    var attraction1 = {lat: 37.652321, lng: 128.784946};
-    var attraction2 = {lat: 37.773703, lng: 128.945114};
-    var attraction3 = {lat: 37.893176, lng: 127.776993};
-    var content1 = '<span style="font-size:20px;">'+
-    '강릉 커피 박물관</span><br/>' + '주소: 강원도 강릉시 왕산면 왕산로 2171-19<br>' +
-    '영업시간: 영업 중 ⋅ 오후 7:00에 영업 종료<br>' + '연락처: 033-645-9294<br>';
-    var infowindow1 = new google.maps.InfoWindow({ content: content1 });
-    var content2 =  '<span style="font-size:20px;">' + '강릉 커피 거리</span><br/>' +
-    '위치 : 강원도 강릉시 창해로 17<br>(강릉항~안목해맞이공원)';
-    var infowindow2 = new google.maps.InfoWindow({ content: content2 });
-    var content3 =   '<span style="font-size:20px;">춘천 구봉산 카페거리</span><br>' +
-    '위치 : 강원도 춘천시 동면 순환대로 1154<br>' +
-    '구봉산 전망대 일대'
-    var infowindow3 = new google.maps.InfoWindow({ content: content3 });
-    function initMap(){
-      map = new google.maps.Map(document.getElementById('map'), {
-          center: attraction1, zoom: 7});
-      marker1 = new google.maps.Marker({
-        position: attraction1, map: map, title:'강릉커피박물관'});
-      marker2 = new google.maps.Marker({
-        position: attraction2, map: map, title:'강릉커피거리'});
-      marker3 = new google.maps.Marker({
-        position: attraction3, map: map, title:'춘천카페골목'});
-      marker1.addListener('click', function() { infowindow1.open(map, marker1); });
-      marker2.addListener('click', function() { infowindow2.open(map, marker2); });
-      marker3.addListener('click', function() { infowindow3.open(map, marker3); });
-    }
-    function moveToLocation(lat, lng){
-      var center = new google.maps.LatLng(lat, lng);
-      map.setZoom(13);
-      map.panTo(center);
-    }
-    google.maps.event.addDomListener(window, 'load', initMap);
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWlOV_ggpqFHo6USbVCOpBQQZmscSKMrQ&callback=initMap">
   </script>
 </head>
 
@@ -150,6 +115,48 @@
   <footer class="footer w3-bottom">
     <p>동에번쩍 서에번쩍 나는야 박길동</p>
   </footer>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWlOV_ggpqFHo6USbVCOpBQQZmscSKMrQ&callback=initMap" type="text/javascript"></script>
+  <script>
+    var map;
+    var marker1; var marker2; var marker3;
+    var attraction1 = {lat: 37.652321, lng: 128.784946};
+    var attraction2 = {lat: 37.773703, lng: 128.945114};
+    var attraction3 = {lat: 37.893176, lng: 127.776993};
+    var content1 = '<span style="font-size:20px;">'+
+    '강릉 커피 박물관</span><br/>' + '주소: 강원도 강릉시 왕산면 왕산로 2171-19<br>' +
+    '영업시간: 영업 중 ⋅ 오후 7:00에 영업 종료<br>' + '연락처: 033-645-9294<br>';
+    var infowindow1;
+    var content2 =  '<span style="font-size:20px;">' + '강릉 커피 거리</span><br/>' +
+    '위치 : 강원도 강릉시 창해로 17<br>(강릉항~안목해맞이공원)';
+    var infowindow2;
+    var content3 =   '<span style="font-size:20px;">춘천 구봉산 카페거리</span><br>' +
+    '위치 : 강원도 춘천시 동면 순환대로 1154<br>' +
+    '구봉산 전망대 일대'
+    var infowindow3;
+    function initMap(){
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: attraction1, zoom: 7});
+
+      infowindow1 = new google.maps.InfoWindow({ content: content1 });
+      infowindow2 = new google.maps.InfoWindow({ content: content2 });
+      infowindow3 = new google.maps.InfoWindow({ content: content3 });
+
+      marker1 = new google.maps.Marker({
+        position: attraction1, map: map, title:'강릉커피박물관'});
+      marker2 = new google.maps.Marker({
+        position: attraction2, map: map, title:'강릉커피거리'});
+      marker3 = new google.maps.Marker({
+        position: attraction3, map: map, title:'춘천카페골목'});
+      marker1.addListener('click', function() { infowindow1.open(map, marker1); });
+      marker2.addListener('click', function() { infowindow2.open(map, marker2); });
+      marker3.addListener('click', function() { infowindow3.open(map, marker3); });
+    }
+    function moveToLocation(lat, lng){
+      var center = new google.maps.LatLng(lat, lng);
+      map.setZoom(13);
+      map.panTo(center);
+    }
+    //google.maps.event.addDomListener(window, 'load', initMap);
+  </script>
+
 </body>
 </html>
