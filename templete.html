@@ -32,32 +32,65 @@
 </head>
 
 <body class="w3-display-container">
-  <header class="w3-display-top" style="clear:both; position:fixed; z-index: 999; height: 105px;">
-    <ul class="menubar">
-      <h1 id="logo" onclick="location.href='main.html'" style="margin-top: 0px; margin-bottom: 0px;">coffee</h1>
-      <li class="dropdown">
-      <a href="coffee_intro.html" class="dropbtn">커피소개</a>
-      <div class="dropdown-content">
-        <a href="coffee_intro.html">품종</a>
-        <a href="coffee_extra.html">추출법</a>
-        <a href="coffee_effect.html">효능/부작용</a>
-        <a href="coffee_menu.html">커피 메뉴</a>
-      </div>
-      </li>
-      <li class="dropdown">
-        <a href="coffee_intro.html" class="dropbtn">이용팁</a>
+    <header data-position="fixed">
+      <ul class="menubar">
+        <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
+        <li class="dropdown">
+        <a href="coffee_intro.html" class="dropbtn">커피소개</a>
         <div class="dropdown-content">
-          <a href="coffee_intro.html">브랜드 소개</a>
-          <a href="coffee_extra.html">추천 메뉴</a>
-          <a href="coffee_effect.html">할인/멤버십</a>
+          <a href="coffee_intro.html">품종</a>
+          <a href="coffee_extra.html">추출법</a>
+          <a href="coffee_effect.html">효능/부작용</a>
+          <a href="coffee_menu.html">커피 메뉴</a>
         </div>
-      </li>
-      <li><a href="#news">커피 명소</a></li>
-      <li><a href="#news">사이트 맵</a></li>
-    </ul>
-  </header>
-  <main style="height: 93%; overflow:auto; padding-top:100px; padding-bottom:50px;">
-  </main>
+        </li>
+        <li><a href="#home">프렌차이즈 이용 팁</a></li>
+        <li><a href="#news">커피 명소</a></li>
+        <li><a href="#news">사이트 맵</a></li>
+      </ul>
+    <nav style="float:left" class="col-2 col-m-2 menu row">
+        <ul>
+            <li onclick="location.href='coffee_intro.html';"  style="cursor:pointer;">품종</li>
+            <li onclick="location.href='coffee_extra.html';"  style="cursor:pointer;">추출법</li>
+            <li onclick="location.href='coffee_effect.html';"  style="cursor:pointer;">효능/부작용</li>
+            <li onclick="location.href='coffee_menu.html';"  style="cursor:pointer;">커피 메뉴</li>
+        </ul>
+    </nav>
+</header>
+    <section class="row col-10 col-m-10 background" style="overflow-y: scroll">
+        <article class="transbox">
+            <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="openCity('London')">에티오피아 예가체프</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('Paris')">예멘 모카 마타리</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">자메이카 블루 마운틴</button>
+            </div>
+            <div id="London" class="w3-container city">
+                <h2>Ethiopia Yirgacheffe</h2>
+
+                <p><img src="EthiopiaYirgacheffe.jpg" alt="EY" height="180" width="180" style="float:right;"><p>에티오피아 남부 시다모 현안의 예가체프 지역 고지대에서 재배하는 커피이다. 에티오피아 커피 중 가장 세련된 커피라 평가된다. 예가체프의 향기는 제대로 맡아본 사람이 아니면 도저히 상상만으로 떠올릴 수 없을 정도이다. 향 때문에 유명해진 것이라고도 말할 수 있다. 부드러우면서 짙은 꽃향기, 목넘김 이후에 남는 아련한 향, 부드러운 바디, 달콤한 신맛 등 예가체프를 최고의 커피라 부르는 이유는 많다.
+
+일반적으로 과실의 상쾌한 신맛과 초콜릿의 달콤함, 그리고 와인에 비유되는 향미와 깊은 맛을 가진 것으로 평가된다. 참고로 한정된 예가체프를 비싸게 수출하려는 사람들이 소량만을 블랜딩하여 판매하기도 한다.</p>
+            </div>
+            <div id="Paris" class="w3-container city" style="display:none">
+                <h2>Paris</h2>
+                <p>Paris is the capital of France.</p> 
+            </div>
+            <div id="Tokyo" class="w3-container city" style="display:none">
+                <h2>Tokyo</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+            <script>
+                function openCity(cityName) {
+                    var i;
+                    var x = document.getElementsByClassName("city");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                    }
+                document.getElementById(cityName).style.display = "block";  
+            }
+            </script>
+        </article>
+    </section>
   <div class="push"></div>
   <footer class="footer w3-bottom">
     <p>동에번쩍 서에번쩍 나는야 박길동</p>

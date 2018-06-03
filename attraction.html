@@ -14,7 +14,6 @@
       width: 95%;
       border: 1px solid black;
     }
-
     .attraction_img{
       float: left;
       margin:0px;
@@ -36,7 +35,6 @@
     var attraction1 = {lat: 37.652321, lng: 128.784946};
     var attraction2 = {lat: 37.773703, lng: 128.945114};
     var attraction3 = {lat: 37.893176, lng: 127.776993};
-
     var content1 = '<span style="font-size:20px;">'+
     '강릉 커피 박물관</span><br/>' + '주소: 강원도 강릉시 왕산면 왕산로 2171-19<br>' +
     '영업시간: 영업 중 ⋅ 오후 7:00에 영업 종료<br>' + '연락처: 033-645-9294<br>';
@@ -48,7 +46,6 @@
     '위치 : 강원도 춘천시 동면 순환대로 1154<br>' +
     '구봉산 전망대 일대'
     var infowindow3 = new google.maps.InfoWindow({ content: content3 });
-
     function initMap(){
       map = new google.maps.Map(document.getElementById('map'), {
           center: attraction1, zoom: 7});
@@ -62,7 +59,6 @@
       marker2.addListener('click', function() { infowindow2.open(map, marker2); });
       marker3.addListener('click', function() { infowindow3.open(map, marker3); });
     }
-
     function moveToLocation(lat, lng){
       var center = new google.maps.LatLng(lat, lng);
       map.setZoom(13);

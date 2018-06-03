@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="common.css" type="text/css">
+  <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
+  <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
+  <link rel="stylesheet" href="coffee_effectW.css" type="text/css">
+  <style>
+    .attraction_intro{
+      margin: 10px;
+      width: 95%;
+      border: 1px solid black;
+    }
+
+    .attraction_img{
+      float: left;
+      margin:0px;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+    }
+    @media only screen and (max-width: 499px){
+      #map{height: 300px}
+    }
+    @media only screen and (min-width: 500px){
+      #map{height: 450px}
+    }
+  </style>
+</head>
+
+<body class="w3-display-container">
+    <header data-position="fixed">
+      <ul class="menubar">
+        <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
+        <li class="dropdown">
+        <a href="coffee_intro.html" class="dropbtn">커피소개</a>
+        <div class="dropdown-content">
+          <a href="coffee_intro.html">품종</a>
+          <a href="coffee_extra.html">추출법</a>
+          <a href="coffee_effect.html">효능/부작용</a>
+          <a href="coffee_menu.html">커피 메뉴</a>
+        </div>
+        </li>
+        <li><a href="#home">프렌차이즈 이용 팁</a></li>
+        <li><a href="#news">커피 명소</a></li>
+        <li><a href="#news">사이트 맵</a></li>
+      </ul>
+    <nav style="float:left" class="col-2 col-m-2 menu row">
+        <ul>
+            <li onclick="location.href='coffee_intro.html';"  style="cursor:pointer;">품종</li>
+            <li onclick="location.href='coffee_extra.html';"  style="cursor:pointer;">추출법</li>
+            <li onclick="location.href='coffee_effect.html';"  style="cursor:pointer;">효능/부작용</li>
+            <li onclick="location.href='coffee_menu.html';"  style="cursor:pointer;">커피 메뉴</li>
+        </ul>
+    </nav>
+</header>
+    <section class="row col-10 col-m-10 background" style="overflow-y: scroll">
+  
+
+ 
+
+<div class="polaroid" style="float:left; margin:30px 30px 0 0">
+    <img src="GoodE.jpg" alt="good" height=300 width=300>
+    <div class="container">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">긍정적 효과 알아보기</button>
+    </div>
+</div>
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>커피의 효능</h3>
+            <p>커피와 제2형 당뇨병 간의 관계를 분석한 기존의 연구 결과들을 종합한 논문에 따르면, 커피 혹은 카페인 섭취가 제2형 당뇨병의 발생 위험을 낮춰주었다. 해당 연구에서는 커피를 자주 마시는 사람이 적게 마시는 사람에 비해 제2형 당뇨병의 발생 위험이 낮았으며, 이런 관련성은 여성, 마른 사람과 비흡연자에서 더 강했다. 커피 섭취가 2잔 증가할수록 당뇨 발생위험은 12% 감소하였고, 디카페인 커피 섭취가 2잔 증가할수록 당뇨 발생위험은 11% 감소하였다.
+            <br><br>
+            이러한 결과에 대한 원인이 아직 명확하게 밝혀지진 않았지만, 커피에 포함되어 있는 클로로젠산, 마그네슘 등의 항산화 물질이 체내의 혈당 조절 능력을 향상시켜주기 때문인 것으로 추론되고 있다.
+            <br><br>
+            최근에는 하루 3~5잔의 커피를 마시면 관상동맥 질환 예방에 도움이 될 수 있다는 연구 결과가 나오기도 했다. 해당 연구진은 심장 질환이 없는 성인 2만 5,000여 명을 대상으로 하루 커피 섭취량과 관상동맥 석회화 수치를 비교하였다. 관상동맥 석회화 수치는 관상동맥질환의 발생 가능성을 예측할 수 있는 지표로, 연구 결과 하루 3~5잔(1잔 기준, 150ml) 미만의 커피를 마시는 사람이 커피를 전혀 마시지 않는 사람에 비해 관상동맥 석회화 수치가 41% 감소하였다.
+            <br><br>
+            이러한 결과에 대해 연구팀은 커피가 죽상동맥경화증의 주요 위험인자인 당뇨병의 위험을 감소시키며 커피에 들어있는 항산화 물질이 저밀도 지단백 콜레스테롤의 산화 감소 등에 영향을 미치는 것으로 추정했다.
+            <br><br>
+            이와 같은 연구 결과들을 바탕으로 미국 최고의 영양 관련 자문기구인 식생활지침자문위원회(Dietaryguidelines Advisory Committee)에서는 커피를 마시는 것이 제2형 당뇨병, 심장병, 파킨슨병의 위험을 줄이는데 도움이 된다고 한다</p>
+        </div>
+    </div>
+</div>
+   
+<div class="polaroid" style="float:left; margin:30px 30px 0 0">
+    <img src="BedE.jpg" alt="bed" height=300 width=300>
+    <div class="container">
+        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">부정적 효과 알아보기</button>
+    </div>
+</div>
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>커피의 부작용</h3>
+            <p>커피(coffee) 부작용은 위장 장애, 골다공증(Osteoporosis) 유발, 심장 박동 불규칙 및 손 떨림, 심근 경색 유발, 고혈압 유발, 콜레스테롤 증가, 혈중 지방 상승으로 간(肝) 기능 손상, 심장. 뼈. 페. 기관지 손상 및 관절염 악화, 만성 두통, 임신 불능과 유산. 조산 유발 및 신생아 체중 감소, 중년 여성의 골다공증 악화, 요실금(尿失禁), 유방통(乳房痛), 여자 가슴(乳房) 축소, 시력 손상 및 녹내장 발생, 커피 중독 증세(이명. 현기증. 불안감), 장(腸) 운동 촉진에 의한 변의(便意), 이뇨 효과에 의한 탈수 및 갈증 유발, 탈모 촉진. 기타(철분 흡수 방해로 인한 빈혈. 치아가 약해짐. 청소년의 성장 장애. 행동 집중력 장애. 심한 경우 환각 장애) 등이다. 커피 부작용은 대부분 카페인(caffeine) 때문이다. 
+            <br><br>
+            세계 보건 기구(WHO)는 커피를 3단계 발암 물질로 규정하고 있다. 방광암 등 각종 암(癌)을 일으킬 가능성을 배제할 수 없다는 이유 때문이다. 
+            <br><br>
+            커피(coffee) 속에는 약 1,000종의 화학 물질이 있는데, 그 중 20 종류는 쥐를 대상으로 실험한 결과 발암 물질로 알려져 있다. 커피를 볶는 제조 과정에 나오는 메틸글리옥살(methylglyoxal) 및 기타 발암 물질 때문에 난소암. 방광암. 췌장암. 신장 세포암. 유방암을 증가시킨다. 또한, 커피의 주성분인 카페인(caffeine) 역시 유전자가 손상되었을 때 회복을 억제하여 결국 발암(發癌) 물질로 작용을 한다. </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="polaroid" style="float:left; margin: 30px 0 0 0" >
+    <img src="DrinkE.jpg" alt="dinrk" height=300 width=300>
+    <div class="container">
+        <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-black">효과적으로 마시는방법 알아보기</button>
+    </div>
+</div>
+<div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>커피 효과적으로 마시는 방법</h3>
+            <p>식품의약품안전처(이하 식약처)에 정한 우리나라 국민의 카페인 하루 섭취기준은 성인 400mg 이하, 임산부 300mg 이하, 어린이 · 청소년 2.5mg/kg(체중) 이하 이다. 식약처의 조사에 의하면, 시중에 판매되고 있는 커피 종류에 따른 1회 제공량당 카페인 평균 함유량은 액상커피(캔커피 등) 84.41mg, 조제커피(커피믹스) 47.51mg, 캡슐커피 73.59mg 인 것으로 나타났다. 커피전문점에서 판매하는 커피의 1회 제공량당 카페인 함유량은 카푸치노 137.30mg, 아메리카노 124.99mg, 카라멜마끼야또 118.42mg, 카페라떼 111.55mg 이었다.
+            <br><br>
+            이 조사결과를 우리나라 성인의 카페인 하루 섭취기준과 비교하면, 액상커피 4.8캔, 조제커피 8.3봉, 캡슐커피 5.4잔, 커피전문점 커피 3.3잔이 하루 섭취권장량 해당하는 양이 된다. 청소년의 경우에는 액상커피 1.5캔, 조제커피 2.6봉, 캡슐커피 1.7잔, 커피전문점 커피 1잔이 하루 섭취권장량에 해당하는 수준이다.
+            <br><br>
+            하지만, 이는 카페인을 기준으로 산출된 수치로 커피를 마심으로 인해 커피 속 다른 성분을 지나치게 섭취할 수 있어 주의해야 한다. 특히, 커피를 통한 당류 섭취를 조심해야 하는데, 우리나라의 경우 주식을 통한 당 섭취량보다 가공식품을 통한 당 섭취량이 증가하는 추세를 보이며 그 중에서 커피가 가장 큰 영향을 미치는 것으로 나타났다.
+            <br><br>
+            카페인 ∙ 당류 등 커피에 들어 있는 성분을 고려하는 것 이외에도 커피를 마실 때의 습관을 주의할 필요가 있다. 커피믹스를 마실 때 커피믹스 봉지를 스푼 대용으로 사용하는 경우가 종종 있다. 커피믹스 봉지는 눈으로 보았을 때는 한 겹인 것처럼 보이지만 실제로는 산소, 수분, 빛 등으로부터 내용물을 보호하기 위해 2~3겹 이상의 플라스틱필름이나 알루미늄박 등을 접착시켜 만든다.
+            <br><br>
+            커피믹스 봉지 표면에 코팅된 플라스틱 필름은 커피믹스 봉지를 뜯을 때 벗겨지기 쉽다. 이 상태에서 커피믹스 봉지로 커피를 저으면 벗겨진 필름을 통해 봉지를 인쇄할 때 사용한 성분이 용출되어 건강에 해로울 수 있다.</p>
+        </div>
+    </div>
+</div>
+
+
+    </section>
+  <div class="push"></div>
+
+  <footer class="footer w3-bottom">
+    <p>동에번쩍 서에번쩍 나는야 박길동</p>
+  </footer>
+</body>
+</html>
