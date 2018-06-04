@@ -21,6 +21,14 @@
       padding: 5px;
       width: 100%;
     }
+
+    #guest_book_table, #guest_book_table td, #guest_book_table th{
+
+      text-align: center;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
     @media only screen and (max-width: 499px){
       #map{height: 300px}
     }
@@ -28,12 +36,111 @@
       #map{height: 450px}
     }
   </style>
+  <script>
+    var html5rocks = {};
+    html5rocks.webdb = {};
+    html5rocks.webdb.db = null;
+
+    html5rocks.webdb.open = function() {
+      var dbSize = 5 * 1024 * 1024; // 5MB
+      html5rocks.webdb.db = openDatabase("guest_book", "1.0", "guest book comment", dbSize);
+    }
+
+    html5rocks.webdb.createTable = function() {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS guest_book(id INTEGER PRIMARY KEY ASC, date TEXT, comment TEXT)", []);
+      });
+    }
+
+    html5rocks.webdb.add = function(date, comment) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        var addedOn = new Date();
+        tx.executeSql("INSERT INTO guest_book(date, comment) VALUES (?,?)",
+            [date, comment],
+            html5rocks.webdb.onSuccess,
+            html5rocks.webdb.onError);
+       });
+
+    }
+
+    html5rocks.webdb.onError = function(tx, e) {
+      alert("에러 발생: " + e.message);
+    }
+
+    html5rocks.webdb.onSuccess = function(tx, r) {
+      html5rocks.webdb.getAllWebsiteItems(loadItems);
+    }
+
+    html5rocks.webdb.getAllWebsiteItems = function(renderFunc) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx) {
+        tx.executeSql("SELECT * FROM guest_book", [], renderFunc,
+            html5rocks.webdb.onError);
+      });
+    }
+
+    html5rocks.webdb.delete = function(id) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        tx.executeSql("DELETE FROM guest_book",
+            html5rocks.webdb.onSuccess,
+            html5rocks.webdb.onError);
+        });
+    }
+
+    function loadItems(tx, rs) {
+      var rowOutput = "";
+      var guest_table = document.getElementById("guest_book_table");
+      for (var i=0; i < rs.rows.length; i++) {
+        rowOutput += renderWebSite(rs.rows.item(i));
+      }
+      guest_table.innerHTML = rowOutput;
+    }
+
+    function renderWebSite(row) {
+      return "<tr><td>" + row.date  + "</td><td>"+ row.comment + "</td></tr>";
+    }
+
+    function deleteRow(rowId) {
+    html5rocks.webdb.delete(rowId);
+    }
+
+    function init() {
+      html5rocks.webdb.open();
+      html5rocks.webdb.createTable();
+      html5rocks.webdb.getAllWebsiteItems(loadItems);
+    }
+
+    function add() {
+      var date = document.getElementById("date");
+      var comment = document.getElementById("comment");
+      html5rocks.webdb.add(date.value, comment.value);
+      date.value = "";
+      comment.value = "";
+    }
+
+    function deleteALL() {
+      html5rocks.webdb.deleteALL();
+      init();
+    }
+
+    html5rocks.webdb.deleteALL = function() {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        tx.executeSql("drop table guest_book", [],
+        html5rocks.webdb.onSuccess,
+        html5rocks.webdb.onError);
+      });
+    }
+  </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWlOV_ggpqFHo6USbVCOpBQQZmscSKMrQ&callback=initMap">
   </script>
 </head>
 
-<body class="w3-display-container">
+<body class="w3-display-container" onload="init();">
   <header class="w3-display-top" style="clear:both; position:fixed; z-index: 999; height: 105px;">
     <ul class="menubar">
       <h1 id="logo" onclick="location.href='main.html'" style="margin-top: 0px; margin-bottom: 0px;">coffee</h1>
@@ -94,20 +201,22 @@
           <th>방문 날짜</th>
           <th>내용</th>
         </tr>
-        <tr align="center">
-          <td>
-            <input type="date"></input>
+        <tr>
+          <td style="text-align: center;">
+            <input id="date" type="date"></input>
           </td>
           <td>
-            <input type="text" style="width: 100%;"></input>
+            <input id="comment" type="comment" style="width: 100%;"></input>
           </td>
           <td>
-            <input type="button" value="기록"></intput>
+            <input type="button" onclick="add();" value="기록"></intput>
+          </td>
+          <td>
+            <input type="button" onclick="deleteALL();" value="삭제"></input>
+          </td>
         </tr>
       </table>
-      <table style="border: 1px solid black; width: 100%">
-        <tr></tr>
-        <tr></tr>
+      <table id="guest_book_table" style="border: 1px solid black; width: 100%">
       </table>
     </section>
   </main>
@@ -135,11 +244,9 @@
     function initMap(){
       map = new google.maps.Map(document.getElementById('map'), {
           center: attraction1, zoom: 7});
-
       infowindow1 = new google.maps.InfoWindow({ content: content1 });
       infowindow2 = new google.maps.InfoWindow({ content: content2 });
       infowindow3 = new google.maps.InfoWindow({ content: content3 });
-
       marker1 = new google.maps.Marker({
         position: attraction1, map: map, title:'강릉커피박물관'});
       marker2 = new google.maps.Marker({
@@ -157,6 +264,5 @@
     }
     //google.maps.event.addDomListener(window, 'load', initMap);
   </script>
-
 </body>
 </html>
