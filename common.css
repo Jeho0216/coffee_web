@@ -57,3 +57,6 @@ body, html{
     margin-top: 0px;
     margin-bottom: 0px;
 }
+#tips, #coffee_intro, #coffee_extra, #attraction{
+  background-color: red;
+}

@@ -1,5 +1,11 @@
 @charset "utf-8";
-
+.effect_img{
+     height:100%;
+     width:100%;
+}
+.container{
+    position:center;
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -24,7 +30,7 @@
 }
 .menu li{
     padding: 8px;
-    margin-bottom: 10px;
+    margin-top: 5px;
     background-color: #333;
     color:#ffffff;
 }
@@ -44,10 +50,13 @@
 }
 
 li a, .dropbtn {
-    
+
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+nav{
+  margin-bottom: 5px;
 }

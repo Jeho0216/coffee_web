@@ -8,14 +8,12 @@
   <link rel="stylesheet" href="common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
-  <script src="http://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
   <style>
     .attraction_intro{
       margin: 10px;
       width: 95%;
       border: 1px solid black;
     }
-
     .attraction_img{
       float: left;
       margin:0px;
@@ -23,6 +21,14 @@
       padding: 5px;
       width: 100%;
     }
+
+    #guest_book_table, #guest_book_table td, #guest_book_table th{
+
+      text-align: center;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
     @media only screen and (max-width: 499px){
       #map{height: 300px}
     }
@@ -30,50 +36,111 @@
       #map{height: 450px}
     }
   </style>
-
   <script>
-    var map;
-    var marker1; var marker2; var marker3;
-    var attraction1 = {lat: 37.652321, lng: 128.784946};
-    var attraction2 = {lat: 37.773703, lng: 128.945114};
-    var attraction3 = {lat: 37.893176, lng: 127.776993};
+    var html5rocks = {};
+    html5rocks.webdb = {};
+    html5rocks.webdb.db = null;
 
-    var content1 = '<span style="font-size:20px;">'+
-    '강릉 커피 박물관</span><br/>' + '주소: 강원도 강릉시 왕산면 왕산로 2171-19<br>' +
-    '영업시간: 영업 중 ⋅ 오후 7:00에 영업 종료<br>' + '연락처: 033-645-9294<br>';
-    var infowindow1 = new google.maps.InfoWindow({ content: content1 });
-    var content2 =  '<span style="font-size:20px;">' + '강릉 커피 거리</span><br/>' +
-    '위치 : 강원도 강릉시 창해로 17<br>(강릉항~안목해맞이공원)';
-    var infowindow2 = new google.maps.InfoWindow({ content: content2 });
-    var content3 =   '<span style="font-size:20px;">춘천 구봉산 카페거리</span><br>' +
-    '위치 : 강원도 춘천시 동면 순환대로 1154<br>' +
-    '구봉산 전망대 일대'
-    var infowindow3 = new google.maps.InfoWindow({ content: content3 });
-
-    function initMap(){
-      map = new google.maps.Map(document.getElementById('map'), {
-          center: attraction1, zoom: 7});
-      marker1 = new google.maps.Marker({
-        position: attraction1, map: map, title:'강릉커피박물관'});
-      marker2 = new google.maps.Marker({
-        position: attraction2, map: map, title:'강릉커피거리'});
-      marker3 = new google.maps.Marker({
-        position: attraction3, map: map, title:'춘천카페골목'});
-      marker1.addListener('click', function() { infowindow1.open(map, marker1); });
-      marker2.addListener('click', function() { infowindow2.open(map, marker2); });
-      marker3.addListener('click', function() { infowindow3.open(map, marker3); });
+    html5rocks.webdb.open = function() {
+      var dbSize = 5 * 1024 * 1024; // 5MB
+      html5rocks.webdb.db = openDatabase("guest_book", "1.0", "guest book comment", dbSize);
     }
 
-    function moveToLocation(lat, lng){
-      var center = new google.maps.LatLng(lat, lng);
-      map.setZoom(13);
-      map.panTo(center);
+    html5rocks.webdb.createTable = function() {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS guest_book(id INTEGER PRIMARY KEY ASC, date TEXT, comment TEXT)", []);
+      });
     }
-    google.maps.event.addDomListener(window, 'load', initMap);
+
+    html5rocks.webdb.add = function(date, comment) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        var addedOn = new Date();
+        tx.executeSql("INSERT INTO guest_book(date, comment) VALUES (?,?)",
+            [date, comment],
+            html5rocks.webdb.onSuccess,
+            html5rocks.webdb.onError);
+       });
+
+    }
+
+    html5rocks.webdb.onError = function(tx, e) {
+      alert("에러 발생: " + e.message);
+    }
+
+    html5rocks.webdb.onSuccess = function(tx, r) {
+      html5rocks.webdb.getAllWebsiteItems(loadItems);
+    }
+
+    html5rocks.webdb.getAllWebsiteItems = function(renderFunc) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx) {
+        tx.executeSql("SELECT * FROM guest_book", [], renderFunc,
+            html5rocks.webdb.onError);
+      });
+    }
+
+    html5rocks.webdb.delete = function(id) {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        tx.executeSql("DELETE FROM guest_book",
+            html5rocks.webdb.onSuccess,
+            html5rocks.webdb.onError);
+        });
+    }
+
+    function loadItems(tx, rs) {
+      var rowOutput = "";
+      var guest_table = document.getElementById("guest_book_table");
+      for (var i=0; i < rs.rows.length; i++) {
+        rowOutput += renderWebSite(rs.rows.item(i));
+      }
+      guest_table.innerHTML = rowOutput;
+    }
+
+    function renderWebSite(row) {
+      return "<tr><td>" + row.date  + "</td><td>"+ row.comment + "</td></tr>";
+    }
+
+    function deleteRow(rowId) {
+    html5rocks.webdb.delete(rowId);
+    }
+
+    function init() {
+      html5rocks.webdb.open();
+      html5rocks.webdb.createTable();
+      html5rocks.webdb.getAllWebsiteItems(loadItems);
+    }
+
+    function add() {
+      var date = document.getElementById("date");
+      var comment = document.getElementById("comment");
+      html5rocks.webdb.add(date.value, comment.value);
+      date.value = "";
+      comment.value = "";
+    }
+
+    function deleteALL() {
+      html5rocks.webdb.deleteALL();
+      init();
+    }
+
+    html5rocks.webdb.deleteALL = function() {
+      var db = html5rocks.webdb.db;
+      db.transaction(function(tx){
+        tx.executeSql("drop table guest_book", [],
+        html5rocks.webdb.onSuccess,
+        html5rocks.webdb.onError);
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWlOV_ggpqFHo6USbVCOpBQQZmscSKMrQ&callback=initMap">
   </script>
 </head>
 
-<body class="w3-display-container">
+<body class="w3-display-container" onload="init();">
   <header class="w3-display-top" style="clear:both; position:fixed; z-index: 999; height: 105px;">
     <ul class="menubar">
       <h1 id="logo" onclick="location.href='main.html'" style="margin-top: 0px; margin-bottom: 0px;">coffee</h1>
@@ -87,14 +154,14 @@
       </div>
       </li>
       <li class="dropdown">
-        <a href="coffee_intro.html" class="dropbtn">이용팁</a>
+        <a href="tips_intro.html" class="dropbtn">이용 팁</a>
         <div class="dropdown-content">
-          <a href="coffee_intro.html">브랜드 소개</a>
-          <a href="coffee_extra.html">추천 메뉴</a>
+          <a href="tips_intro.html">소개</a>
+          <a href="tips_recommand.html">추천 메뉴</a>
           <a href="coffee_effect.html">할인/멤버십</a>
         </div>
       </li>
-      <li><a href="#news">커피 명소</a></li>
+      <li><a id="attraction" href="#news">커피 명소</a></li>
       <li><a href="#news">사이트 맵</a></li>
     </ul>
   </header>
@@ -108,12 +175,12 @@
           연락처: 033-645-9294<br>
         </article>
       <article class="attraction_intro" onclick="moveToLocation(37.773703, 128.945114, 2)">
-        <img class="attraction_img" src="coffe_street.jpg">
+        <img class="attraction_img" src="coffe_street.JPG">
         <span style="font-size:20px;">강릉 커피 거리</span><br/>
         위치 : 강원도 강릉시 창해로 17.(강릉항~안목해맞이공원)
       </article>
       <article class="attraction_intro" onclick="moveToLocation(37.893176, 127.776993, 3)">
-        <img class="attraction_img" src="santoriny.jpg">
+        <img class="attraction_img" src="santoriny.JPG">
         <span style="font-size:20px;">춘천 구봉산 카페거리</span><br>
         위치 : 강원도 춘천시 동면 순환대로 1154<br>
         구봉산 전망대 일대
@@ -130,18 +197,26 @@
     </section>
     <section class="col-m-12 col-8">
       <table style="border: 1px solid black; width: 100%;" >
-        <tr>
+        <tr align="center">
           <th>방문 날짜</th>
           <th>내용</th>
         </tr>
         <tr>
-          <td>
-            <input type="date"></input>
+          <td style="text-align: center;">
+            <input id="date" type="date"></input>
           </td>
           <td>
-            <input type="text" style="width: 100%;"></input>
+            <input id="comment" type="comment" style="width: 100%;"></input>
+          </td>
+          <td>
+            <input type="button" onclick="add();" value="기록"></intput>
+          </td>
+          <td>
+            <input type="button" onclick="deleteALL();" value="삭제"></input>
           </td>
         </tr>
+      </table>
+      <table id="guest_book_table" style="border: 1px solid black; width: 100%">
       </table>
     </section>
   </main>
@@ -149,5 +224,45 @@
   <footer class="footer w3-bottom">
     <p>동에번쩍 서에번쩍 나는야 박길동</p>
   </footer>
+  <script>
+    var map;
+    var marker1; var marker2; var marker3;
+    var attraction1 = {lat: 37.652321, lng: 128.784946};
+    var attraction2 = {lat: 37.773703, lng: 128.945114};
+    var attraction3 = {lat: 37.893176, lng: 127.776993};
+    var content1 = '<span style="font-size:20px;">'+
+    '강릉 커피 박물관</span><br/>' + '주소: 강원도 강릉시 왕산면 왕산로 2171-19<br>' +
+    '영업시간: 영업 중 ⋅ 오후 7:00에 영업 종료<br>' + '연락처: 033-645-9294<br>';
+    var infowindow1;
+    var content2 =  '<span style="font-size:20px;">' + '강릉 커피 거리</span><br/>' +
+    '위치 : 강원도 강릉시 창해로 17<br>(강릉항~안목해맞이공원)';
+    var infowindow2;
+    var content3 =   '<span style="font-size:20px;">춘천 구봉산 카페거리</span><br>' +
+    '위치 : 강원도 춘천시 동면 순환대로 1154<br>' +
+    '구봉산 전망대 일대'
+    var infowindow3;
+    function initMap(){
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: attraction1, zoom: 7});
+      infowindow1 = new google.maps.InfoWindow({ content: content1 });
+      infowindow2 = new google.maps.InfoWindow({ content: content2 });
+      infowindow3 = new google.maps.InfoWindow({ content: content3 });
+      marker1 = new google.maps.Marker({
+        position: attraction1, map: map, title:'강릉커피박물관'});
+      marker2 = new google.maps.Marker({
+        position: attraction2, map: map, title:'강릉커피거리'});
+      marker3 = new google.maps.Marker({
+        position: attraction3, map: map, title:'춘천카페골목'});
+      marker1.addListener('click', function() { infowindow1.open(map, marker1); });
+      marker2.addListener('click', function() { infowindow2.open(map, marker2); });
+      marker3.addListener('click', function() { infowindow3.open(map, marker3); });
+    }
+    function moveToLocation(lat, lng){
+      var center = new google.maps.LatLng(lat, lng);
+      map.setZoom(13);
+      map.panTo(center);
+    }
+    //google.maps.event.addDomListener(window, 'load', initMap);
+  </script>
 </body>
 </html>

@@ -8,6 +8,27 @@
   <link rel="stylesheet" href="common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
+
+  <style>
+    .brand_intro{
+      margin: 10px;
+      width: 30%;
+      border: 1px solid black;
+      float: left;
+    }
+    .brand_img{
+      float: left;
+      margin:0px;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+    }
+    #brand_table td, #brand_table th, #brand_table{
+      text-align:center;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
 
 <body class="w3-display-container">
@@ -23,21 +44,65 @@
         <a href="coffee_menu.html">커피 메뉴</a>
       </div>
       </li>
-      <li><a id="tips" href="tips_intro.html">이용 팁</a></li>
+      <li class="dropdown">
+        <a id="tips" href="tips_intro.html" class="dropbtn">이용 팁</a>
+        <div class="dropdown-content">
+          <a href="tips_intro.html">브랜드 소개</a>
+          <a href="tips_recommand.html">추천 메뉴</a>
+          <a href="#">할인/멤버십</a>
+        </div>
+      </li>
       <li><a href="attraction.html">커피 명소</a></li>
       <li><a href="#news">사이트 맵</a></li>
     </ul>
     <nav style="float:left" class="col-3 col-m-12 menu row">
       <ul align="center">
-        <li onclick="location.href='#';"  style="cursor:pointer;">소개</li>
-        <li onclick="location.href='#';"  style="cursor:pointer;">추천메뉴</li>
+        <li onclick="location.href='tips_intro.html';"  style="cursor:pointer;">소개</li>
+        <li onclick="location.href='tips_recommand.html';"  style="cursor:pointer;">추천메뉴</li>
         <li onclick="location.href='#';"  style="cursor:pointer;">할인/멤버십</li>
       </ul>
     </nav>
   </header>
-  <section class="row col-9 col-m-12">
-    <p> aaaa </p>
-  </section>
+  <main>
+    <section class="col-m-12 col-9" style="margin-bottom: 50px;">
+      <table id="brand_table">
+        <tr>
+          <th><img src="starbucks_logo.JPG" width="50%"><br><br>스타벅스</th>
+          <th><img src="angel_logo.JPG" width="50%"><br><br>엔제리너스</th>
+        </tr>
+        <tr>
+          <td>
+            신세계그룹과 스타벅스 미국 본사의 합작회사인 스타벅스 커피 코리아에서 운영한다.<br>
+            1호점은 1999년 7월 27일 이화여대점.<br>
+            모든 스타벅스 매장이 스타벅스코리아의 직영점<br>
+          </td>
+          <td>
+            롯데GRS에서 운영하는 커피체인점.<br>
+            1호점은 2000년 6월 롯데백화점 강남점 안.<br>
+            "자바 커피"라는 이름으로 시작, 2006년 12월에 Angel-in-us Coffee로 브랜드 변경.<br>
+          </td>
+        </tr>
+        <tr>
+          <th><img src="twosome_logo.JPG" width="50%"><br><br>투썸플레이스</th>
+          <th><img src="pascucci_logo.JPG" width="50%"><br><br>파스쿠찌</th>
+        </tr>
+        <tr>
+          <td>
+            CJ그룹의 CJ푸드빌의 커피체인점.<br>
+            1호점은 2002년 신촌오거리<br>
+            다른 브랜드와는 다르게 "Dessert Cafe"로, 케이크류가 중심인 커피전문점이다.<br>
+
+          </td>
+          <td>
+            이탈리아의 커피브랜드.<br>
+            한국에서는 SPC그룹이 라이센스를 맺고 체인점을 운영중이다.<br>
+            1호점은 2002년 홍대점.<br>
+
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
   <div class="push"></div>
   <footer class="footer w3-bottom">
     <p>동에번쩍 서에번쩍 나는야 박길동</p>

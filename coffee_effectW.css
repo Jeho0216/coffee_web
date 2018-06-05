@@ -1,4 +1,8 @@
 @charset "utf-8";
+.effect_img{
+	 height:300px;
+	 width:250px;
+}
 div.polaroid {
   width: 30%;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -8,6 +12,7 @@ button{
 	width:250px;
 }
 div.container {
+
   text-align: center;
-  padding: 10px 20px;
+  padding: 10px 20px 20px 20px;
 }
