@@ -5,22 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-  <link href="mainW.css" rel="stylesheet" type="text/css" media="screen and (min-width:721px)">
-  <link href="mainM.css" rel="stylesheet" type="text/css" media="screen and (max-width:720px)">
+
+  <style>
+    body, html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+    .bgimg {
+      <!-- background-image: url("coffee_beans.jpg"); -->
+
+      background-position: center;
+      background-size: cover;
+      background-color: #333;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-  <header class="bgimg w3-display-container w3-center" >
+  <header class="bgimg w3-display-container w3-center" id="home">
     <div>
-      <h2 style="font-size: 65px; font-weight:bold; font-style: italic; color:white;font-family:'Inconsolata', sans-serif;padding:100px 15px 100px 15px;">Hello Coffee World</h1>
+      <h1 style="font-size:80px;color:white;font-family:'Inconsolata', sans-serif;padding:200px 15px 100px 15px;">WebPage Title</h1>
     </div>
-    <div class="w3-bar w3-black" style="position: relative; margin: 50px 0px 0px 0px; width:50%;" id="menu">
-      <div style="margin:0; list-style: none;">
-        <li><a href="coffee_intro.html" class="w3-bar-item w3-hover-grey" style="width:100%;">Introduction</a></li>
-        <li><a href="tips_intro.html" class="w3-bar-item w3-hover-grey" style="width:100%;">Tips</a></li>
-        <li><a href="attraction.html " class="w3-bar-item w3-hover-grey" style="width:100%;">Attraction</a></li>
-        <li><a href="#" class="w3-bar-item w3-hover-grey" style="width:100%;">Site Map</a></li>
-      </div>
+    <div class="w3-bar w3-black" style="width:50%; opacity:1;">
+      <a href="#" class="w3-bar-item w3-hover-light-grey" style="width:25%;">Introduction</a>
+      <a href="tips.html" class="w3-bar-item w3-hover-light-grey" style="width:25%;">Tips</a>
+      <a href="attraction.html " class="w3-bar-item w3-hover-light-grey" style="width:25%;">Attraction</a>
+      <a href="#" class="w3-bar-item w3-hover-light-grey" style="width:25%;">Site Map</a>
     </div>
   </header>
+  <footer class="w3-dispaly-container w3-bottom" style="text-align: center;">
+    footer 메뉴
+  </footer>
 </body>
 </html>
