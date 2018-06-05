@@ -8,27 +8,6 @@
   <link rel="stylesheet" href="common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
-  <style>
-    .attraction_intro{
-      margin: 10px;
-      width: 95%;
-      border: 1px solid black;
-    }
-
-    .attraction_img{
-      float: left;
-      margin:0px;
-      margin-bottom: 10px;
-      padding: 5px;
-      width: 100%;
-    }
-    @media only screen and (max-width: 499px){
-      #map{height: 300px}
-    }
-    @media only screen and (min-width: 500px){
-      #map{height: 450px}
-    }
-  </style>
 </head>
 
 <body class="w3-display-container">
@@ -36,7 +15,7 @@
       <ul class="menubar">
         <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
         <li class="dropdown">
-        <a href="coffee_intro.html" class="dropbtn">커피소개</a>
+        <a id="coffee_intro" href="coffee_intro.html" class="dropbtn">커피소개</a>
         <div class="dropdown-content">
           <a href="coffee_intro.html">품종</a>
           <a href="coffee_extra.html">추출법</a>
@@ -44,12 +23,12 @@
           <a href="coffee_menu.html">커피 메뉴</a>
         </div>
         </li>
-        <li><a href="#home">프렌차이즈 이용 팁</a></li>
+        <li><a href="tips_intro.html">이용 팁</a></li>
         <li><a href="#news">커피 명소</a></li>
         <li><a href="#news">사이트 맵</a></li>
       </ul>
-    <nav style="float:left" class="col-2 col-m-2 menu row">
-        <ul>
+    <nav style="float:left" class="col-3 col-m-12 menu row">
+        <ul align="center">
             <li onclick="location.href='coffee_intro.html';"  style="cursor:pointer;">품종</li>
             <li onclick="location.href='coffee_extra.html';"  style="cursor:pointer;">추출법</li>
             <li onclick="location.href='coffee_effect.html';"  style="cursor:pointer;">효능/부작용</li>
@@ -57,7 +36,7 @@
         </ul>
     </nav>
 </header>
-    <section class="row col-10 col-m-10 background" style="overflow-y: scroll">
+    <section class="row col-9 col-m-12 background" style="overflow-y: scroll; padding-top: 5px;">
         <article class="transbox">
             <div class="w3-bar w3-black">
                 <button class="w3-bar-item w3-button" onclick="openCity('FP')">프렌치 프레스</button>
@@ -96,9 +75,9 @@
                     var i;
                     var x = document.getElementsByClassName("city");
                     for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";  
+                        x[i].style.display = "none";
                     }
-                document.getElementById(cityName).style.display = "block";  
+                document.getElementById(cityName).style.display = "block";
             }
             </script>
         </article>

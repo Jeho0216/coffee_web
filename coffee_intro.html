@@ -8,27 +8,6 @@
   <link rel="stylesheet" href="common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
-  <style>
-    .attraction_intro{
-      margin: 10px;
-      width: 95%;
-      border: 1px solid black;
-    }
-
-    .attraction_img{
-      float: left;
-      margin:0px;
-      margin-bottom: 10px;
-      padding: 5px;
-      width: 100%;
-    }
-    @media only screen and (max-width: 499px){
-      #map{height: 300px}
-    }
-    @media only screen and (min-width: 500px){
-      #map{height: 450px}
-    }
-  </style>
 </head>
 
 <body class="w3-display-container">
@@ -36,34 +15,34 @@
       <ul class="menubar">
         <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
         <li class="dropdown">
-        <a href="coffee_intro.html" class="dropbtn">커피소개</a>
-        <div class="dropdown-content">
-          <a href="coffee_intro.html">품종</a>
-          <a href="coffee_extra.html">추출법</a>
-          <a href="coffee_effect.html">효능/부작용</a>
-          <a href="coffee_menu.html">커피 메뉴</a>
-        </div>
+          <a id="coffee_intro" href="coffee_intro.html" class="dropbtn">커피소개</a>
+          <div class="dropdown-content">
+            <a href="coffee_intro.html">품종</a>
+            <a href="coffee_extra.html">추출법</a>
+            <a href="coffee_effect.html">효능/부작용</a>
+            <a href="coffee_menu.html">커피 메뉴</a>
+          </div>
         </li>
-        <li><a href="#home">프렌차이즈 이용 팁</a></li>
-        <li><a href="#news">커피 명소</a></li>
+        <li><a href="tips_intro.html">이용 팁</a></li>
+        <li><a href="attraction.html">커피 명소</a></li>
         <li><a href="#news">사이트 맵</a></li>
       </ul>
-    <nav style="float:left" class="col-2 col-m-2 menu row">
-        <ul>
-            <li onclick="location.href='coffee_intro.html';"  style="cursor:pointer;">품종</li>
-            <li onclick="location.href='coffee_extra.html';"  style="cursor:pointer;">추출법</li>
-            <li onclick="location.href='coffee_effect.html';"  style="cursor:pointer;">효능/부작용</li>
-            <li onclick="location.href='coffee_menu.html';"  style="cursor:pointer;">커피 메뉴</li>
-        </ul>
-    </nav>
-</header>
-    <section class="row col-10 col-m-10 background" style="overflow-y: scroll">
+      <nav style="float:left" class="col-3 col-m-12 menu row">
+          <ul align="center">
+              <li onclick="location.href='coffee_intro.html';"  style="cursor:pointer;">품종</li>
+              <li onclick="location.href='coffee_extra.html';"  style="cursor:pointer;">추출법</li>
+              <li onclick="location.href='coffee_effect.html';"  style="cursor:pointer;">효능/부작용</li>
+              <li onclick="location.href='coffee_menu.html';"  style="cursor:pointer;">커피 메뉴</li>
+          </ul>
+      </nav>
+    </header>
+    <section class="row col-9 col-m-12 background" style="overflow-y: scroll; padding-top: 5px;">
         <article class="transbox">
             <div class="w3-bar w3-black">
                 <button class="w3-bar-item w3-button" onclick="openCity('YE')">에티오피아 예가체프</button>
                 <button class="w3-bar-item w3-button" onclick="openCity('YMM')">예멘 모카 마타리</button>
                 <button class="w3-bar-item w3-button" onclick="openCity('JBM')">자메이카 블루 마운틴</button>
-                <button class="w3-bar-item w3-button" onclick="openCity('ISM')">자메이카 블루 마운틴</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('ISM')">인도네시아 수마트라 만델링</button>
             </div>
             <div id="YE" class="w3-container city">
                 <h2>Ethiopia Yirgacheffe</h2>
@@ -74,7 +53,7 @@
             <div id="YMM" class="w3-container city" style="display:none">
                 <h2>Yemen Mocha Mattari</h2>
                 <p><img src="YememMochaMattari.jpg" alt="YMM" height="180" width="180" style="float:right;">아라비아 반도의 남서에 위치한 예멘은 ‘초록의 아라비아’라고 부를 만큼 중동 아랍권에서 초록이 풍부하며 비도 풍족한 나라이다. 커피를 뜻하는 오랜 닉네임인 모카는 이 지역의 작은 항구도시로 커피를 수출입하던 장소였는데 지금은 사용되지 않는 곳이 되었다.<br><br>
-                예멘 중에서도 베니마타르 지역에서 생산하는 최고급 품종의 커피를 가리켜 ‘모카 마타리’라 부른다. 자메이카 블루 마운틴, 하와이안 코나와 더불어 세계 3대 프리미엄 커피로 인정받고 있다. 또한 반 고흐가 좋아한 커피로 알려져 있기도 하다. 고흐의 팬들은 ‘그와 소통하는 길은 마타리를 마시는 길밖에 없다’고 말하며 즐겨 마신다고 한다. 묵직한 바디감, 새콤한 맛과 쓴맛의 환상적인 조화, 진한 다크 초콜릿 향이 매력이다.</p> 
+                예멘 중에서도 베니마타르 지역에서 생산하는 최고급 품종의 커피를 가리켜 ‘모카 마타리’라 부른다. 자메이카 블루 마운틴, 하와이안 코나와 더불어 세계 3대 프리미엄 커피로 인정받고 있다. 또한 반 고흐가 좋아한 커피로 알려져 있기도 하다. 고흐의 팬들은 ‘그와 소통하는 길은 마타리를 마시는 길밖에 없다’고 말하며 즐겨 마신다고 한다. 묵직한 바디감, 새콤한 맛과 쓴맛의 환상적인 조화, 진한 다크 초콜릿 향이 매력이다.</p>
             </div>
             <div id="JBM" class="w3-container city" style="display:none">
                 <h2>Jamaica Blue Mountain</h2>
@@ -93,9 +72,9 @@
                     var i;
                     var x = document.getElementsByClassName("city");
                     for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";  
+                        x[i].style.display = "none";
                     }
-                document.getElementById(cityName).style.display = "block";  
+                document.getElementById(cityName).style.display = "block";
             }
             </script>
         </article>

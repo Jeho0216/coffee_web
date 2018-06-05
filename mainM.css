@@ -9,9 +9,9 @@
     	font-family:'Inconsolata', sans-serif;
     	padding:200px 15px 100px 15px;"
     }
-    #mene div li a{
+    #menu div li a{
       text-decoration: none;
-    	font-size:15px;
+    	font-size:20px;
     	color:red;
     	font-family:'Inconsolata', sans-serif;
     }

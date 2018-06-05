@@ -1,16 +1,19 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <link rel="stylesheet" href="common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
-
 </head>
 
 <body class="w3-display-container">
-  <header class="w3-display-top" style="clear:both; position:fixed; z-index: 999; height: 105px;">
+  <header data-position="fixed">
     <ul class="menubar">
-      <h1 id="logo" onclick="location.href='main.html'" style="margin-top: 0px; margin-bottom: 0px;">coffee</h1>
+      <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
       <li class="dropdown">
       <a href="coffee_intro.html" class="dropbtn">커피소개</a>
       <div class="dropdown-content">
@@ -20,20 +23,21 @@
         <a href="coffee_menu.html">커피 메뉴</a>
       </div>
       </li>
-      <li class="dropdown">
-        <a href="tips_intro.html" class="dropbtn">이용팁</a>
-        <div class="dropdown-content">
-          <a href="tips_intro.html">브랜드 소개</a>
-          <a href="#">추천 메뉴</a>
-          <a href="#">할인/멤버십</a>
-        </div>
-      </li>
+      <li><a id="tips" href="tips_intro.html">이용 팁</a></li>
       <li><a href="attraction.html">커피 명소</a></li>
       <li><a href="#news">사이트 맵</a></li>
     </ul>
+    <nav style="float:left" class="col-3 col-m-12 menu row">
+      <ul align="center">
+        <li onclick="location.href='#';"  style="cursor:pointer;">소개</li>
+        <li onclick="location.href='#';"  style="cursor:pointer;">추천메뉴</li>
+        <li onclick="location.href='#';"  style="cursor:pointer;">할인/멤버십</li>
+      </ul>
+    </nav>
   </header>
-  <main style="height: 93%; overflow:auto; padding-top:100px; padding-bottom:50px;">
-  </main>
+  <section class="row col-9 col-m-12">
+    <p> aaaa </p>
+  </section>
   <div class="push"></div>
   <footer class="footer w3-bottom">
     <p>동에번쩍 서에번쩍 나는야 박길동</p>
