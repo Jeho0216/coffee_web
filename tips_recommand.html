@@ -13,10 +13,10 @@
       width: 50%;
     }
     .recommand_img{
-      float: left;
+      clear: both;
       margin: 0px;
       padding: 5px;
-      width: 100%;
+      width: 90%;
     }
     h4{
       margin: 0px;
@@ -64,8 +64,8 @@
           <th><img src="angel_logo.JPG" width="50%" onclick="document.getElementById('angel_recommand').style.display='block'"><br><br>엔제리너스</th>
         </tr>
         <tr>
-          <th><img src="twosome_logo.JPG" width="50%"><br><br>투썸플레이스</th>
-          <th><img src="pascucci_logo.JPG" width="50%"><br><br>파스쿠찌</th>
+          <th><img src="twosome_logo.JPG" width="50%" onclick="document.getElementById('angel_recommand').style.display='block'"><br><br>투썸플레이스</th>
+          <th><img src="pascucci_logo.JPG" width="50%" onclick="document.getElementById('pascucci_recommand').style.display='block'"><br><br>파스쿠찌</th>
         </tr>
       </table>
     </section>
@@ -75,22 +75,22 @@
     <p>동에번쩍 서에번쩍 나는야 박길동</p>
   </footer>
   <!--모달 정의-->
-  <div id="starbucks_recommand" class="w3-modal">
+  <div id="starbucks_recommand" class="w3-modal" style="align-content: center;">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('starbucks_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <table id="recommand_table">
           <tr>
-            <td><img src="starbucks_recommand_1.jpg" class="recommand_img"></td>
-            <td><img src="starbucks_recommand_2.jpg" class="recommand_img"></td>
-          </tr>
-          <tr>
             <td>
+              <img src="starbucks_recommand_1.jpg" class="recommand_img">
               <h4>1. 돼지바 프라푸치노</h4>
               딸기크림프라푸치노(두유) + 딸기시럽 4 + 자바칩 반반 + 초콜릿 드리즐<br>
               돼지바와 맛이 비슷하다. 상큼하고 달달한 맛이 좋다면 추천!
             </td>
+          </tr>
+          <tr>
             <td>
+              <img src="starbucks_recommand_2.jpg" class="recommand_img">
               <h4>2. 트윅스 프라푸치노</h4>
               바닐라크림 프라푸치노 + 자바칩 2 + 에스프레소 휘핑 + 초콜릿 드리즐<br>
               바닐라와 초코가 섞여 오레오를 느낄 수 있다. 우유와 오레오를 함께 먹는 느낌!<br>
@@ -98,10 +98,8 @@
             </td>
           </tr>
           <tr>
-            <td><img src="starbucks_recommand_3.jpg" class="recommand_img"></td>
-          </tr>
-          <tr>
             <td>
+              <img src="starbucks_recommand_3.jpg" class="recommand_img">
               <h4>3. 오레오 프라푸치노</h4>
               카라멜 프라푸치노 + 자바칩 반반 + 헤이즐넛 시럽 1 + 초콜릿 드리즐<br>
               초코바 트윅스 맛이 난다. 카라멜과 초콜릿으로 달달함이 배.<br>
@@ -118,6 +116,46 @@
         <span onclick="document.getElementById('angel_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <p>Some text. Some text. Some text.</p>
         <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
+  <div id="pascucci_recommand" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('pascucci_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <table id="recommand_table">
+          <tr>
+            <td>
+              <img src="pascucci_recommand_1.jpg" class="recommand_img">
+              <h4>1. 아이스 초콜릿</h4>
+              초콜릿파우더와 우유로 만들지만, 파우더가 진하고 많이들어간다.<br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="pascucci_recommand_2.jpg" class="recommand_img">
+              <h4>2. 화이트초콜릿 라떼마끼아또</h4>
+              달콤한 카라멜과 부드러운 스팀밀크를 혼합한 후,<br>
+              에스프레소를 가미한 정통 이탈리아 라뗴.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="pascucci_recommand_3.jpg" class="recommand_img">
+              <h4>3. 스트로베리 요거트 그라니따</h4>
+              젤라또가 올라간 프라푸치노. 딸기와 요거트 파우더로 만듬.<br>
+              여러가지 종류의 그라니따 중 대표적인 메뉴
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="pascucci_recommand_4.jpg" class="recommand_img">
+              <h4>4. 루비 자몽 주스</h4>
+              히비스커스 티를 우려내어 꿀을 더하고,<br>
+              생자몽을 착즙하여 혼합한 자몽 주스.
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
