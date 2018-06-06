@@ -18,6 +18,7 @@
       padding: 5px;
       width: 50%;
     }
+
     #recommand_table td, #recommand_table th, #recommand_table{
       text-align:center;
       border: 1px solid black;
@@ -53,7 +54,7 @@
         <div class="dropdown-content">
           <a href="tips_intro.html">브랜드 소개</a>
           <a href="tips_recommand.html">추천 메뉴</a>
-          <a href="#">할인/멤버십</a>
+         <a href="tips_discount.html">할인/멤버십</a>
         </div>
       </li>
       <li><a href="attraction.html">커피 명소</a></li>
@@ -63,16 +64,17 @@
       <ul align="center">
         <li onclick="location.href='tips_intro.html';"  style="cursor:pointer;">소개</li>
         <li onclick="location.href='tips_recommand.html';"  style="cursor:pointer;">추천메뉴</li>
-        <li onclick="location.href='#';"  style="cursor:pointer;">할인/멤버십</li>
+        <li onclick="location.href='tips_discount.html';"  style="cursor:pointer;">할인/멤버십</li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="col-m-12 col-9" style="margin-bottom: 50px;">
       <table id="recommand_table">
+        <caption>브랜드 별 추천 메뉴</caption>
         <tr>
           <th><img src="starbucks_logo.JPG" width="50%" onclick="document.getElementById('starbucks_recommand').style.display='block'"><br><br>스타벅스</th>
-          <th><img src="ediya_logo.JPG" width="50%" onclick="document.getElementById('ediya_recommand').style.display='block'"><br><br>이디야 커피</th>
+          <th><img src="ediya_logo.jpg" width="50%" onclick="document.getElementById('ediya_recommand').style.display='block'"><br><br>이디야 커피</th>
         </tr>
         <tr>
           <th><img src="twosome_logo.JPG" width="50%" onclick="document.getElementById('twosome_recommand').style.display='block'"><br><br>투썸플레이스</th>

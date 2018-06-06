@@ -64,3 +64,13 @@ li a, .dropbtn {
 nav{
   margin-bottom: 5px;
 }
+#grade_list{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#grade_list li{
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}

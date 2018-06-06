@@ -1,0 +1,163 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="common.css" type="text/css">
+  <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
+  <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
+  <style>
+    .brand_img{
+      float: left;
+      margin:0px;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 50%;
+    }
+    .discount_img{
+      clear: both;
+      margin: 0px;
+      padding: 5px;
+      width: 80%;
+    }
+
+    #discount_table td, #discount_table th, #discount_table{
+      text-align:center;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    #discount_table th{
+      padding : 5px;
+    }
+    h4{
+      margin: 0px;
+    }
+    td, th{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="w3-display-container">
+  <header data-position="fixed">
+    <ul class="menubar">
+      <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
+      <li class="dropdown">
+      <a href="coffee_intro.html" class="dropbtn">커피소개</a>
+      <div class="dropdown-content">
+        <a href="coffee_intro.html">품종</a>
+        <a href="coffee_extra.html">추출법</a>
+        <a href="coffee_effect.html">효능/부작용</a>
+        <a href="coffee_menu.html">커피 메뉴</a>
+      </div>
+      </li>
+      <li class="dropdown">
+        <a id="tips" href="tips_intro.html" class="dropbtn">이용 팁</a>
+        <div class="dropdown-content">
+          <a href="tips_intro.html">브랜드 소개</a>
+          <a href="tips_recommand.html">추천 메뉴</a>
+         <a href="tips_discount.html">할인/멤버십</a>
+        </div>
+      </li>
+      <li><a href="attraction.html">커피 명소</a></li>
+      <li><a href="#news">사이트 맵</a></li>
+    </ul>
+    <nav style="float:left" class="col-3 col-m-12 menu row">
+      <ul align="center">
+        <li onclick="location.href='tips_intro.html';"  style="cursor:pointer;">소개</li>
+        <li onclick="location.href='tips_recommand.html';"  style="cursor:pointer;">추천메뉴</li>
+        <li onclick="location.href='tips_discount.html';"  style="cursor:pointer;">할인/멤버십</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="col-m-12 col-9" style="margin-bottom: 50px;">
+      <table id="discount_table">
+        <caption>브랜드 별 할인/멤버십 정책</caption>
+        <tr>
+          <th><img src="starbucks_logo.JPG" width="50%" onclick="document.getElementById('starbucks_discount').style.display='block'"><br><br>스타벅스</th>
+          <th><img src="ediya_logo.jpg" width="50%" onclick="document.getElementById('ediya_discount').style.display='block'"><br><br>이디야 커피</th>
+        </tr>
+        <tr>
+          <th><img src="twosome_logo.JPG" width="50%" onclick="document.getElementById('twosome_discount').style.display='block'"><br><br>투썸플레이스</th>
+          <th><img src="pascucci_logo.JPG" width="50%" onclick="document.getElementById('pascucci_discount').style.display='block'"><br><br>파스쿠찌</th>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <div class="push"></div>
+  <footer class="footer w3-bottom">
+    <p>동에번쩍 서에번쩍 나는야 박길동</p>
+  </footer>
+  <!--모달 정의-->
+  <div id="starbucks_discount" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('starbucks_discount').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <ul id="grade_list">
+          <li class="col-4 col-m-12">
+            <ul id="welcom" style="list-style: none; margin: 0px, padding: 0px;">
+              <li><img src="starbucks_welcome.JPG" class="discount_img"></li>
+              <li>- 스타벅스 카드로 음료 구매 시, Free Extra 1개 제공</li>
+              <li>- 생일 축하 무료 음료 e-쿠폰 제공- 일년 동안 모인 별★이 한 개도 없을 시, 다음해에는
+              생일 쿠폰이 발급되지 않습니다.</li>
+              <li>- 기능 설정 후 스타벅스 카드로 결제 시, 현금영수증 자동 발행</li>
+              <li>- 분실 신고 시점의 카드 잔액 보호- 자동 충전 5만원 이상 설정 후,
+              충전 시마다 BOGO e-쿠폰 제공</li>
+              <li>(충전 금액 합산은 적용되지 않습니다.)</li>
+            </ul>
+          </li>
+          <li class="col-4 col-m-12">
+            <ul id="green" style="list-style: none; margin: 0px, padding: 0px;" align="center">
+              <li><img src="starbucks_green.JPG" class="discount_img"></li>
+              <li style="background-color: gray">Welcome Level 혜택 모두 포함</li>
+              <li>- 스타벅스 리저브™ 원두 구매 시,
+              스타벅스 리저브™ 음료 or 오늘의 커피
+              e-쿠폰 제공</li>
+              <li>- 250g원두 or 12개입 VIA 구매 시,
+              오늘의 커피 or 아이스커피 e-쿠폰 제공</li>
+              <li>- Beverage BOGO e-쿠폰- 회원 전용 이벤트</li>
+            </ul>
+          </li>
+          <li class="col-4 col-m-12">
+            <ul id="gold" style="list-style: none; margin: 0px, padding: 0px;" align="center">
+              <li><img src="starbucks_gold.JPG" class="discount_img"></li>
+              <li style="background-color: gray">Green Level 혜택 모두 포함</li>
+              <li>- 나만의 Gold Card 발급</li>
+              <li>- 별 ★ 12개 적립 시마다 무료 음료 쿠폰 제공</li>
+              <li>- Personalized Offer e-쿠폰 제공</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="ediya_discount" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('ediya_discount').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <ul id="grade_list">
+          <li class="col-4 col-m-6"><img src="ediya_membership_1.jpg" class="discount_img"></li>
+          <li class="col-4 col-m-6"><img src="ediya_membership_2.jpg" class="discount_img"></li>
+          <li class="col-4 col-m-6"><img src="ediya_membership_3.jpg" class="discount_img"></li>
+          <li class="col-4 col-m-6"><img src="ediya_membership_4.jpg" class="discount_img"></li>
+          <li class="col-4 col-m-6"><img src="ediya_membership_5.jpg" class="discount_img"></li>
+          <li class="col-4 col-m-6"><img src="ediya_membership_6.jpg" class="discount_img"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="twosome_discount" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container" align="center">
+        <span onclick="document.getElementById('twosome_discount').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      </div>
+    </div>
+  </div>
+  <div id="pascucci_discount" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container" align="center">
+        <span onclick="document.getElementById('pascucci_discount').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

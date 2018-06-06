@@ -1,33 +1,7 @@
 
 @charset "utf-8";
-.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-}
-
-    
-.s:hover + .h {
-    display: block;
-}
-.gallery img {
-    width: 100%;
-    height: auto;
-}
-
-.desc {
-    padding: 15px;
-    text-align: center;
-}
-.h {
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  margin-bottom: 25px;
-    background-color: yellow;
-    padding: 20px;
-    display: none;
-    float:left;
-}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
     *{
         box-sizing: border-box;
     }
@@ -135,4 +109,15 @@
 
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+
+    #grade_list{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+    }
+    #grade_list li{
+      float: left;
+      margin: 0px;
+      padding: 0px;
     }
