@@ -9,7 +9,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">  <link rel="stylesheet" href="common.css" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="effect_common.css" type="text/css">
   <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 1000px)">
   <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 1001px)">
   <link rel="stylesheet" href="coffee_effectW.css" type="text/css" media="screen and (min-width: 1001px)">
@@ -17,6 +18,7 @@
 </head>
 
 <body class="w3-display-container">
+
     <header data-position="fixed">
       <ul  class="menubar">
         <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
@@ -37,8 +39,8 @@
             <a href="coffee_effect.html">할인/멤버십</a>
           </div>
         </li>
-        <li><a href="#news">커피 명소</a></li>
-        <li><a href="#news">사이트 맵</a></li>
+        <li><a href="attraction.html">커피 명소</a></li>
+        <li><a href="sitemap.html">사이트 맵</a></li>
       </ul>
     <nav style="float:left" class="col-3 col-m-12 menu row">
         <ul align="center">
@@ -49,51 +51,79 @@
         </ul>
     </nav>
 </header>
+<h1 class="w3-center" style="font-weight: bold;">커피 메뉴</h1>
+<section class="background row col-9 col-t-10 col-m-12 background" 
+style="overflow-y: scroll; padding-top: 5px; margin:10px 0 55px 0">
 
-<section class="background row col-9 col-t-10 col-m-12 background" style="overflow-y: scroll; padding-top: 5px; margin:10px 0 55px 0">
 <div>
     <div class="w3-center" id="food">
 
-    <div class="row col-4 col-t-6 col-m-12" >
-      <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>Vienna Coffee</h3>
-      <p style="font-size:12px;">아메리카위에 하얀 휘핑크림을 얹은 커피를 말한다.<br>차가운 생크림의 부드러움과 뜨거운 커피의 쌉싸래함,시간이 지날수록 차츰 진해지는 단맛이 한데 어우러져 한 잔의 커피에서 세 가지 이상의 맛을 즐길 수 있다.</p>
+    <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Espresso.jpg" alt="Avatar" style="width:150px">
+      <h3>Espresso</h3>
+      <p style="font-size:12px;">곱게 갈아 압축한 원두가루에 뜨거운 물을 고압으로 통과시켜 뽑아낸 이탈리안 정통 커피다. 기본적으로 에스프레소의 맛은 고소하면서도 기분 좋은 쓴맛이다.</p>
     </div>
 
-    <div class="row col-4 col-t-6 col-m-12">
-      <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
+    
+   
+    <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Americano.jpg" alt="Avatar" style="width:150px">
+      <h3>Americano</h3>
+      <p style="font-size:12px;">에스프레소에 물을 넣어 연하게 마시는 커피이다.<br>적당량의 뜨거운 물을 섞는 방식이 연한 커피를 즐기는 미국에서 시작된 것이라 하여'아메리카노'라 부른다.</p>
   </div>
 
-    <div class="row col-4 col-t-6 col-m-12">
-      <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-</div>
 
-    <div class="w3-center" id="food">
-
-    <div class="row col-4 col-t-6 col-m-12">
-      <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div class="row col-4 col-t-10 col-m-12" >
+      <img class="imgs" src="ConPanna.jpg" alt="Avatar" style="width:150px">
+      <h3>Con Panna</h3>
+      <p style="font-size:12px;">에스프레소 위에 크림을 올린 커피이다. 진한 에스프레소가 달콤한 크림과 만나 에스프레소보다 마시기 편하다. 단맛은 좋아하지만 초콜릿이나 캐러멜 시럽의 맛과 향이 부담스러운 분들에게 추천한다. 특히 추운 겨울에 잘 어울리는 메뉴이다.</p>
     </div>
 
-    <div class="row col-4 col-t-6 col-m-12">
+
+   <div class="w3-center" id="food">
+
+    <div class="row col-4 col-t-10 col-m-12" >
       <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <h3>Vienna</h3>
+      <p style="font-size:12px;">아메리카위에 하얀 휘핑크림을 얹은 커피를 말한다.차가운 생크림의 부드러움과 뜨거운 커피의 쌉싸래함,시간이 지날수록 차츰 진해지는 단맛이 어우러져 한 잔의 커피에서 세 가지 이상의 맛을 즐길 수 있다.</p>
+    </div>
+ 
+   <div class="row col-4 col-t-10 col-m-12" >
+      <img class="imgs" src="Latte.jpg" alt="Avatar" style="width:150px">
+      <h3>Caffe Latte</h3>
+      <p style="font-size:12px;">우유를 따뜻하게 데워서 에스프레소와 우유를섞어 마신다. 부드러운 우유 맛이 일품이다. 라테를 만들 때에는 마무리로 우유 거품을 살짝 얹는 것이 좋다. 거품이 뚜껑 역할을 해서 온도가 떨어지는 것을 막아주기 때문이다.</p>
     </div>
 
-    <div class="row col-4 col-t-6 col-m-12">
-      <img class="imgs" src="ViennaCoffee.jpg" alt="Avatar" style="width:150px">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
+
+    <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Affogato.jpg" alt="Avatar" style="width:150px">
+      <h3>Caffe Latte</h3>
+      <p style="font-size:12px;">이탈리아의 대표적인 디저트로, 진하게 추출한 에스프레소에 아이스크림을 올리거나 아이스크림 위에 에스프레소를 끼얹어 만드는 커피 메뉴이다.<br><br><br><br></p>
+    </div>
+
+   <div class="w3-center" id="food">
+
+
+    <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Mocha.jpg" alt="Avatar" style="width:150px">
+      <h3>Cafe Mocha</h3>
+      <p style="font-size:12px;">에스프레소에 우유와 초콜릿을 넣고 휘핑크림을 올린 커피이다. 진한 초콜릿과 크림을 넣어 매우 달콤한 메뉴이다. 에스프레소와 섞고 휘핑크림을 올린 다음 마무리로 초코 소스를 이용해 모양을 내면 보는 즐거움까지 더해진다.</p>
+    </div>
+
+
+     <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Cappuccino.jpg" alt="Avatar" style="width:150px">
+      <h3>Cappuccino</h3>
+      <p style="font-size:12px;">에스프레소 위에 하얀 우유 거품을 올린 커피로, 부드러우면서도 진한 맛을 즐기고 싶을 때 빠지지 않는 메뉴이다. 커피 위에 올리는 흰 거품이 프란체스코의 카푸친 수도사들이 쓰고 다니는 모자와 닮았다고 해서 ‘카푸치노’라고 부른다. </p>
+      </div>
+
+
+    <div class="row col-4 col-t-10 col-m-12">
+      <img class="imgs" src="Baileys.jpg" alt="Avatar" style="width:150px">
+      <h3>Baileys</h3>
+      <p style="font-size:12px;">커피에 베일리스를 넣어 만든 것으로, 특유의 향이 나는 칵테일 커피이다. 베일리스는 벨기에산 초콜릿과 신선한 아이리시 크림, 위스키가 부드럽게 섞인 세계 최초의 크림 리큐르로 특유의 부드러운 맛이 돋보인다.</p>
   </div>
+
 
     </div>
 </div>
@@ -103,7 +133,7 @@
 </section>
     <div class="push"></div>
     <footer class="footer w3-bottom">
-        <p>동에번쩍 서에번쩍 나는야 박길동</p>
+        <p>Copyright © HelloCoffeWorld</p>
     </footer>
 </body>
 </html>

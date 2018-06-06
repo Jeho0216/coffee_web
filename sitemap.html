@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="common.css" type="text/css">
+  <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-width: 720px)">
+  <link rel="stylesheet" href="desktop.css" type="text/css" media="screen and (min-width: 721px)">
+
+
+
+
+
+  <style>
+  button{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+
+  }
+    .site li a {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .site li a:hover {
+        background-color: white;
+        color:red;
+    }
+
+    .site li.dropdown {
+        display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body class="w3-display-container">
+    <header data-position="fixed">
+      <ul class="menubar">
+        <h1 id="logo" onclick="location.href='main.html';">coffee</h1>
+        <li class="dropdown">
+          <a href="coffee_intro.html" class="dropbtn">커피소개</a>
+          <div class="dropdown-content">
+            <a href="coffee_intro.html">품종</a>
+            <a href="coffee_extra.html">추출법</a>
+            <a href="coffee_effect.html">효능/부작용</a>
+            <a href="coffee_menu.html">커피 메뉴</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="tips_intro.html" class="dropbtn">이용 팁</a>
+          <div class="dropdown-content">
+            <a href="tips_intro.html">소개</a>
+            <a href="tips_recommand.html">추천 메뉴</a>
+            <a href="tips_discount.html">할인/멤버십</a>
+          </div>
+        </li>
+        <li><a href="attraction.html">커피 명소</a></li>
+        <li><a id="sitemap" href="sitemap.html">사이트 맵</a></li>
+      </ul>
+    </header>
+
+
+    <h1 class="w3-center" style="font-weight: bold;">사이트 맵</h1>
+
+
+    <section class="col-12 col-m-12 " style=" padding-top: 5px;  margin:10px 50px 55px 30px">
+       <ul class="site col-4 col-m-12 ">
+        <button>커피 소개</button><br>
+        <li><a href="coffee_intro.html">품종</a></li>
+        <li><a href="coffee_extra.html">추출법</a></li>
+        <li><a href="coffee_effect.html">효능/부작용</a></li>
+        <li><a href="coffee_menu.html">커피 메뉴</a></li>
+       </ul>
+              <ul class="site col-4 col-m-12 ">
+        <button>이용팁</button><br>
+        <li><a href="tips_intro.html">소개</a></li>
+        <li><a href="tips_recommand.html">추천 메뉴</a></li>
+        <li><a href="tips_discount.html">할인/멤버십</a></li>
+       </ul>
+              <ul class="site col-4 col-m-12 ">
+        <button>커피 명소</button><br>
+        <li><a href="attraction.html">커피 명소</a></li>
+       </ul>
+
+    </section>
+  <div class="push"></div>
+  <footer class="footer w3-bottom">
+    <p>Copyright © HelloCoffeWorld</p>
+  </footer>
+</body>
+</html>

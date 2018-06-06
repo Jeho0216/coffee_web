@@ -66,6 +66,8 @@ nav{
 }
 #grade_list{
   list-style: none;
+  font-size: 20px;
+  font-weight: bold;
   margin: 0px;
   padding: 0px;
 }

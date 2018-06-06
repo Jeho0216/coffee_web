@@ -57,10 +57,19 @@ body, html{
     margin-top: 0px;
     margin-bottom: 0px;
 }
-#tips, #coffee_intro, #coffee_extra, #attraction{
+#tips, #coffee_intro, #coffee_extra, #attraction, #sitemap{
   background-color: red;
 }
 caption{
   font-size: 40px;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+.btn{
+    background-color: black;
+    clear: both;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
