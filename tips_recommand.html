@@ -16,10 +16,21 @@
       clear: both;
       margin: 0px;
       padding: 5px;
-      width: 90%;
+      width: 50%;
+    }
+    #recommand_table td, #recommand_table th, #recommand_table{
+      text-align:center;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    #recommand_table th{
+      padding : 5px;
     }
     h4{
       margin: 0px;
+    }
+    td, th{
+      text-align: center;
     }
   </style>
 </head>
@@ -58,13 +69,13 @@
   </header>
   <main>
     <section class="col-m-12 col-9" style="margin-bottom: 50px;">
-      <table id="brand_table">
+      <table id="recommand_table">
         <tr>
           <th><img src="starbucks_logo.JPG" width="50%" onclick="document.getElementById('starbucks_recommand').style.display='block'"><br><br>스타벅스</th>
-          <th><img src="angel_logo.JPG" width="50%" onclick="document.getElementById('angel_recommand').style.display='block'"><br><br>엔제리너스</th>
+          <th><img src="ediya_logo.JPG" width="50%" onclick="document.getElementById('ediya_recommand').style.display='block'"><br><br>이디야 커피</th>
         </tr>
         <tr>
-          <th><img src="twosome_logo.JPG" width="50%" onclick="document.getElementById('angel_recommand').style.display='block'"><br><br>투썸플레이스</th>
+          <th><img src="twosome_logo.JPG" width="50%" onclick="document.getElementById('twosome_recommand').style.display='block'"><br><br>투썸플레이스</th>
           <th><img src="pascucci_logo.JPG" width="50%" onclick="document.getElementById('pascucci_recommand').style.display='block'"><br><br>파스쿠찌</th>
         </tr>
       </table>
@@ -75,11 +86,11 @@
     <p>동에번쩍 서에번쩍 나는야 박길동</p>
   </footer>
   <!--모달 정의-->
-  <div id="starbucks_recommand" class="w3-modal" style="align-content: center;">
+  <div id="starbucks_recommand" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('starbucks_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <table id="recommand_table">
+        <table style="display: inline;">
           <tr>
             <td>
               <img src="starbucks_recommand_1.jpg" class="recommand_img">
@@ -110,20 +121,91 @@
       </div>
     </div>
   </div>
-  <div id="angel_recommand" class="w3-modal">
+  <div id="ediya_recommand" class="w3-modal">
     <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('angel_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>Some text. Some text. Some text.</p>
-        <p>Some text. Some text. Some text.</p>
+      <div class="w3-container" align="center">
+        <span onclick="document.getElementById('ediya_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <table style="display: inline;">
+          <tr>
+            <td>
+              <img src="ediya_recommand_1.jpg" class="recommand_img">
+              <h4>1. 민트 초콜릿 칩 플랫치노</h4>
+              이디야에서 실패하지 않는 베스트 메뉴<br>
+              진한 민트에 초코시럽과 초콜릿 칩의 조합이 매우 좋다.<br>
+              민트를 싫어한다면 별로..
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="ediya_recommand_2.jpg" class="recommand_img">
+              <h4>2. 홍시 주스</h4>
+              적당한 당도에 부드럽게 갈린 홍시의 느낌이 매우 좋다.<br>
+              스무디 처럼 얼음이 느껴지지도 않고 홍시만 갈려 부드럽게 마실수 있다.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="ediya_recommand_3.jpg" class="recommand_img">
+              <h4>3. 니트로 커피 & 니트로 스위트</h4>
+              고급의 질소 주입 기계로 마실 수 있는 니트로 커피<br>
+              다른 업체의 니트로 커피보다 저렴하게 즐길 수 있다.<br>
+              고압의 질소로 커피맛을 오래 느낄 수 있다.<br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="ediya_recommand_4.jpg" class="recommand_img">
+              <h4>4. 토피넛 라떼</h4>
+              다양한 견과류와 코코아가 잘 어우러진 음료.<br>
+              호두마루와 비슷한 맛이지만 더 맛있다.<br>
+              토피넛 라떼에 샷추가를 하면 텁텁한 맛을 줄일 수 있다.
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="twosome_recommand" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container" align="center">
+        <span onclick="document.getElementById('twosome_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <table style="display: inline;">
+          <tr>
+            <td>
+              <img src="twosome_recommand_1.jpg" class="recommand_img">
+              <h4>1. 스트로베리 피치 프라페</h4>
+              딸기와 복숭아의 그라데이션, 상큼하고 달달한 맛.<br>
+              섞어마셔도 좋고, 빨대를 이용해서 따로 마셔도 좋다.<br>
+              맛없다고 한 사람이 거의 없는 메뉴.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="twosome_recommand_2.jpg" class="recommand_img">
+              <h4>2. 플로팅 라떼</h4>
+              우유에 바닐라 아이스크림과 에스프레소 2샷.<br>
+              얼음이 없고, 아포가토와 비슷한 맛이 난다.<br>
+              아이스크림이 녹을수록 달달해져서 더 맛있는 메뉴.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="twosome_recommand_3.jpg" class="recommand_img">
+              <h4>3. 레드벨벳 케이크</h4>
+              투썸플레이스에서 절대 실패하지 않는 베스트메뉴<br>
+              레드벨벳 4단시트, 과일, 크림치즈<br>
+              시간이 지나면 빵이 조금 굳는다. 바로먹도록 하자.
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
   <div id="pascucci_recommand" class="w3-modal">
     <div class="w3-modal-content">
-      <div class="w3-container">
+      <div class="w3-container" align="center">
         <span onclick="document.getElementById('pascucci_recommand').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <table id="recommand_table">
+        <table>
           <tr>
             <td>
               <img src="pascucci_recommand_1.jpg" class="recommand_img">
